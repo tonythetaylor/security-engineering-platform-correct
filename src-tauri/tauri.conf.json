@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Security Engineering Intelligence Platform",
+  "version": "0.2.0",
+  "identifier": "com.securityengineering.intelligenceplatform",
+  "build": {
+    "beforeDevCommand": "npx http-server src -p 8099 -c-1",
+    "devUrl": "http://localhost:8099",
+    "frontendDist": "../src"
+  },
+  "app": {
+    "windows": [
+      { "title": "Security Engineering Intelligence Platform", "width": 1440, "height": 960, "minWidth": 1100, "minHeight": 760 }
+    ],
+    "security": { "csp": null }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["app", "msi", "nsis"],
+    "icon": ["icons/icon.png"]
+  }
+}

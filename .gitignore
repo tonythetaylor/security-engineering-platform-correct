@@ -1,0 +1,23 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Tauri / Rust build output
+src-tauri/target/
+target/
+
+# Tauri generated bundles
+src-tauri/target/release/
+src-tauri/target/debug/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Local app data / generated reports
+reports/
+data/uploads/
+data/exports/
+*.log
