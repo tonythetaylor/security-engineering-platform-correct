@@ -2,21 +2,39 @@
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "Security Engineering Intelligence Platform",
   "version": "0.2.0",
-  "identifier": "com.securityengineering.intelligenceplatform",
+  "identifier": "com.tonythetaylor.securityengineeringplatform",
   "build": {
-    "beforeDevCommand": "npx http-server src -p 8099 -c-1",
-    "devUrl": "http://localhost:8099",
-    "frontendDist": "../src"
+    "beforeDevCommand": "npm run web:dev",
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "../web"
   },
   "app": {
     "windows": [
-      { "title": "Security Engineering Intelligence Platform", "width": 1440, "height": 960, "minWidth": 1100, "minHeight": 760 }
+      {
+        "title": "Security Engineering Intelligence Platform",
+        "width": 1440,
+        "height": 920,
+        "minWidth": 1100,
+        "minHeight": 720,
+        "resizable": true,
+        "fullscreen": false
+      }
     ],
-    "security": { "csp": null }
+    "security": {
+      "csp": null
+    }
   },
   "bundle": {
     "active": true,
-    "targets": ["app", "msi", "nsis"],
-    "icon": ["icons/icon.png"]
+    "targets": "all",
+    "icon": [
+      "icons/icon.png",
+      "icons/icon.ico",
+      "icons/icon.icns"
+    ],
+    "resources": [
+      "../web/data/*",
+      "../web/config/*"
+    ]
   }
 }

@@ -2,13 +2,18 @@
   "name": "security-engineering-intelligence-platform",
   "version": "0.2.0",
   "private": true,
+  "description": "Air-gapped Security Engineering Intelligence Platform for GitLab/OIS vulnerability portfolio analysis.",
+  "type": "module",
   "scripts": {
+    "web:dev": "npx http-server web -p 1420 -c-1",
+    "web:package": "node scripts/package-web.js",
+    "tauri": "tauri",
     "dev": "tauri dev",
     "build": "tauri build",
-    "icon": "tauri icon src-tauri/icons/icon.png"
+    "package": "npm run web:package"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^2.6.2",
+    "@tauri-apps/cli": "^2.0.0",
     "http-server": "^14.1.1"
   }
 }

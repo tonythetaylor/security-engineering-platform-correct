@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Security Engineering Intelligence Platform</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-theme="dark">
+  <div id="shell" class="shell">
+    <aside id="sidebar" class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">SE</div>
+        <div class="brand-copy"><strong>Security Engineering</strong><span>Intelligence Platform</span></div>
+      </div>
+      <button id="collapseSidebar" class="ghost small">☰ Collapse</button>
+      <nav id="nav"></nav>
+      <div class="sidebar-footer">
+        <div id="datasetBadge">No dataset loaded</div>
+        <button id="themeToggle" class="ghost">Light Mode</button>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <nav id="breadcrumbs" class="breadcrumbs" aria-label="Breadcrumb"></nav>
+          <h1 id="pageTitle">Executive Dashboard</h1>
+          <p id="pageSubtitle">Purpose-built portfolio overview. No fake monthly trend unless multiple snapshots are loaded.</p>
+        </div>
+        <div class="actions">
+          <label class="primary file-btn">Load JSON<input id="fileInput" type="file" accept="application/json" hidden multiple></label>
+          <button id="saveLocal" class="button">Save Local</button>
+          <button id="exportDataset" class="button">Export Dataset</button>
+        </div>
+      </header>
+      <section class="global-search panel-collapsible">
+        <div class="panel-head"><strong>Global Search & Filters</strong><button class="ghost small" data-collapse-target="globalFilters">Toggle</button></div>
+        <div id="globalFilters" class="filter-grid">
+          <input id="globalSearch" placeholder="Search projects, CVEs, namespaces, ATO, stack, owners..." />
+          <select id="severityFilter"><option value="">All severities</option><option>critical</option><option>high</option><option>medium</option><option>low</option></select>
+          <select id="statusFilter"><option value="">All statuses</option><option>PRESENT_STILL_EXISTS</option><option>RESOLVED</option><option>NOT_APPLICABLE_OUT_OF_SCOPE</option><option>DISMISSED_ACCEPTED_RISK</option></select>
+          <select id="scopeFilter"><option value="">All scope</option><option value="TRUE">In scope</option><option value="FALSE">Out of scope</option></select>
+          <select id="prodFilter"><option value="">All prod status</option><option value="TRUE">Prod</option><option value="FALSE">Non-prod</option></select>
+        </div>
+      </section>
+      <section id="view" class="view"></section>
+    </main>
+    <aside id="inspector" class="inspector">
+      <div class="panel-head"><strong>Inspector</strong><button id="closeInspector" class="ghost small">×</button></div>
+      <div id="inspectorBody" class="muted">Click a project, vulnerability, or metric to inspect evidence.</div>
+    </aside>
+  </div>
+  <script src="js/default-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
