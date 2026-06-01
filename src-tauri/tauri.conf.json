@@ -4,8 +4,8 @@
   "version": "0.2.0",
   "identifier": "com.tonythetaylor.securityengineeringplatform",
   "build": {
-    "beforeDevCommand": "npm run web:dev",
-    "devUrl": "http://localhost:1420",
+    "beforeDevCommand": "npx http-server web -p 8080",
+    "devUrl": "http://localhost:8080",
     "frontendDist": "../web"
   },
   "app": {
@@ -13,28 +13,16 @@
       {
         "title": "Security Engineering Intelligence Platform",
         "width": 1440,
-        "height": 920,
-        "minWidth": 1100,
-        "minHeight": 720,
-        "resizable": true,
-        "fullscreen": false
+        "height": 950,
+        "resizable": true
       }
-    ],
-    "security": {
-      "csp": null
-    }
+    ]
   },
   "bundle": {
     "active": true,
     "targets": "all",
     "icon": [
-      "icons/icon.png",
-      "icons/icon.ico",
-      "icons/icon.icns"
-    ],
-    "resources": [
-      "../web/data/*",
-      "../web/config/*"
+      "icons/icon.png"
     ]
   }
 }

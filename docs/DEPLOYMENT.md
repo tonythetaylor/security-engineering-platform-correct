@@ -1,19 +1,10 @@
-# Deployment Notes
+# Deployment
 
-## Lowest Friction Distribution
+## Locked-down work machine
+Use the `web/` folder. Zip it, download it, extract it, and double-click `index.html`.
 
-Use the web artifact:
+## GitLab artifact workflow
+Push this repo to GitLab and let CI package `security-engineering-platform-web.zip`.
 
-1. Download `security-engineering-platform-web.zip` from CI.
-2. Extract it locally.
-3. Open `web/index.html`.
-
-## Native Desktop Distribution
-
-Use the Tauri artifact:
-
-- Windows: `.exe` or `.msi`
-- macOS: `.app` or `.dmg`
-- Linux: `.AppImage` or `.deb`
-
-Some enterprise email gateways block executable bundles. Prefer GitLab artifacts, SharePoint, Teams files, or an approved internal software share.
+## Standalone desktop
+Build with Tauri on a machine with Node/Rust and distribute the generated bundle from `src-tauri/target/release/bundle`.

@@ -1,0 +1,7 @@
+{
+  "themes": [
+    "dark",
+    "light"
+  ],
+  "default": "dark"
+}
